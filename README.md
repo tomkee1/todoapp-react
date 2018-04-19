@@ -5,7 +5,7 @@
 
 Download the project through Git
 
-`git clone https://github.com/nomanHasan/todoapp-react`
+`git clone https://github.com/tomkee1/todoapp-react`
 
 `cd todoapp-react`
 
