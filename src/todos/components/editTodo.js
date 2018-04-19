@@ -104,7 +104,13 @@ class EditTodo extends Component {
 
                     <DatePicker
                         selected={this.getDateForDatePicker()}
-                        onChange={this.changeNewDate}/>
+                        onChange={this.changeNewDate}
+                        showTimeSelect
+                        timeFormat="HH:mm"
+                        timeIntervals={15}
+                        dateFormat="LLL"
+                        timeCaption="time"
+						/>
                 </Table.Cell>
 
                 {/* The options component takes the inputs and decide if It's an option for a Edit Todo or Add New Todo */}
