@@ -31,7 +31,7 @@ class EditTodo extends Component {
     //Initializes a Empty Todo Object
 
     emptyTodo = () => {
-        return {title: "", description: "", date: moment()}
+        return {title: "", description:  moment(), date: moment()}
     }
 
 
@@ -49,6 +49,10 @@ class EditTodo extends Component {
         this.setState({date: event})
     }
 
+    changeNewTime = (event) => {
+        this.setState({description: event})
+    }
+
     // Form submission methods
 
     createTodo = (event) => {
@@ -63,7 +67,7 @@ class EditTodo extends Component {
     // Modifying the inputs indirectly methods
 
     resetTodo = () => {
-        this.setState({title: "", description: "", date: moment()})
+        this.setState({title: "", description: moment(), date: moment()})
     }
     cancelEditing = () => {
         this.props.cancelEditing();
@@ -73,6 +77,12 @@ class EditTodo extends Component {
 
     getDateForDatePicker() {
         return moment(this.state.date)
+
+    }
+
+    getTimeForDatePicker() {
+        return moment(this.state.description)
+
     }
 
     render() {
@@ -86,18 +96,21 @@ class EditTodo extends Component {
                     {/* In this way a controlled two way binding is established */}
 
                     <Input                        
-                        placeholder='Title'
+                        placeholder='Todo'
                         value={this.state.title}
                         onChange={this.changeNewTitle}/>
                 </Table.Cell>
-
-                <Table.Cell>
-                    <Input
-                        placeholder='Description'
-                        value={this.state.description}
-                        onChange={this.changeNewDescription}/>
-                </Table.Cell>
-
+                {/*<Table.Cell>
+                    <DatePicker
+                    selected={this.getTimeForDatePicker()}
+                    onChange={this.changeNewTime}
+                    showTimeSelect
+                    showTimeSelectOnly
+                    timeIntervals={15}
+                    dateFormat="LT"
+                    timeCaption="Time"
+                    />
+                </Table.Cell>*/}
                 <Table.Cell>
 
                     {/* React Datepicker gets the moment date from the class method */}
@@ -105,11 +118,10 @@ class EditTodo extends Component {
                     <DatePicker
                         selected={this.getDateForDatePicker()}
                         onChange={this.changeNewDate}
-                        showTimeSelect
-                        timeFormat="HH:mm"
-                        timeIntervals={15}
                         dateFormat="LLL"
-                        timeCaption="time"
+                        showTimeSelect
+                        timeIntervals={15}
+                        timeCaption="Time"
 						/>
                 </Table.Cell>
 

@@ -34,7 +34,10 @@ export class TodoContainer extends Component {
         this.props.actions.UpdateTodo(todo)
     }
     completeTodo = (todo) => {
-        this.props.actions.UpdateTodo({...todo, status: 'done'})
+        //Toggle todo
+        todo.status == 'done'
+            ? this.props.actions.UpdateTodo({...todo, status: ''})
+            : this.props.actions.UpdateTodo({...todo, status: 'done'})
     }
 
     //Delete

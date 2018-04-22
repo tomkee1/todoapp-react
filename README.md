@@ -26,13 +26,5 @@ Then `npm start`
 * React-Datepicker
 * Moment
 
-## Tutorial Link
 
-This is the Medium tutorial Link - 
-[ReactJS Todo app tutorial with Redux](https://medium.com/@nomanbinhussein/reactjs-todo-app-tutorial-with-redux-57ca14cae621 )
-
-## Video Demonstration
-
-[![Watch the video](https://img.youtube.com/vi/3NiFP8leDqk/0.jpg)](https://www.youtube.com/watch?v=3NiFP8leDqk)
- 
 
