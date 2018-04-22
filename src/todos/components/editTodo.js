@@ -10,6 +10,13 @@ import moment from 'moment';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
+function validate(title) {
+    // true means invalid, so our conditions got reversed
+    return {
+      title: title.length === 0,
+    };
+  }
+  
 class EditTodo extends Component {
 
     constructor(props) {
@@ -84,6 +91,8 @@ class EditTodo extends Component {
         return moment(this.state.description)
 
     }
+
+
 
     render() {
         return (

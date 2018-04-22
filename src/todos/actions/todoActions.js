@@ -49,7 +49,9 @@ export function CreateTodo(todo){
     return (dispatch, getState) => {
         return TodoApi.createTodo(todo).then(res => {
             dispatch(CreateTodoSuccess(res.data.data))
-        })
+        }).catch(function(error) {
+            alert(error+". Cannot connect to remote database");
+          });
     }
 }
 
@@ -66,7 +68,9 @@ export function GetTodos(){
     return (dispactch, getState) => {
         return TodoApi.getTodo().then(res => {
             dispactch(GetTodoSuccess(res))
-        })
+        }).catch(function(error) {
+            alert(error+". Cannot connect to remote database");
+          });
     }
 }
 
@@ -103,6 +107,8 @@ export function UpdateTodo(todo) {
         })
         TodoApi.updateTodo(todo).then(res => {
             dispatch(UpdateTodoSuccess(res.data.data))
+          }).catch(function(error) {
+            alert(error+". Cannot connect to remote database");
         })
     }
 }
@@ -126,7 +132,9 @@ export function DeleteTodo(todo) {
             if (res.status == 204) {
                 dispatch(DeleteTodoSuccess(todo))
             }
-        })
+        }).catch(function(error) {
+            alert(error+". Cannot connect to remote database");
+          });
     }
 }
 export function DeleteTodoSuccess(todo) {
